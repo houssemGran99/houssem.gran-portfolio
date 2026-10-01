@@ -17,18 +17,14 @@
   bootTick();
 
   /* ---------- typing roles ---------- */
-  const roles = ['Backend Engineer', 'Java Developer', 'Spring Boot Architect', 'Banking Systems Builder'];
+  const role = 'AI Orchestrator';
   const typed = $('#typed');
   function startTyping() {
-    if (reduce) { typed.textContent = roles[0]; return; }
-    let r = 0, c = 0, del = false;
+    if (reduce) { typed.textContent = role; return; }
+    let c = 0;
     (function tick() {
-      const word = roles[r];
-      typed.textContent = word.slice(0, c);
-      if (!del && c === word.length) { del = true; return setTimeout(tick, 1400); }
-      if (del && c === 0) { del = false; r = (r + 1) % roles.length; }
-      c += del ? -1 : 1;
-      setTimeout(tick, del ? 35 : 75);
+      typed.textContent = role.slice(0, ++c);
+      if (c < role.length) setTimeout(tick, 75);
     })();
   }
 
