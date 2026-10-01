@@ -66,6 +66,9 @@
   }
   updateTimeline();
 
+  /* ---------- skill chips: stagger index for the pop / wave animations ---------- */
+  $$('.chips').forEach(g => $$('i', g).forEach((c, i) => c.style.setProperty('--i', i)));
+
   /* ---------- touch: highlight whichever card is centred (replaces hover) ---------- */
   if (matchMedia('(hover: none)').matches) {
     const fio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('focus', e.isIntersecting)),
