@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Houssem Gran — Backend Engineer</title>
+<meta name="description" content="Houssem Gran, Backend Engineer & Java developer with 5+ years building secure banking systems with Spring Boot, Flowable and DDD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="loader" id="loader"><span class="loader-text" id="loaderText"></span></div>
+<div class="progress" id="progress"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#top" class="logo">hg<span>.</span>dev</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Stack</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow mono">$ whoami</p>
+    <h1 class="glitch" data-text="Houssem Gran">Houssem Gran</h1>
+    <p class="role mono"><span id="typed"></span><span class="caret">▍</span></p>
+    <p class="lede">I build the secure, scalable engines behind banking apps — from workflow automation to zero-loss database migrations.</p>
+    <div class="cta">
+      <a class="btn primary magnetic" href="#experience">See my work</a>
+      <a class="btn magnetic" href="Houssem-Gran_cv-en.pdf" download>Download CV</a>
+    </div>
+    <div class="scroll-hint mono">scroll ↓</div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Java 17</span><span>Spring Boot</span><span>Flowable</span><span>PostgreSQL</span><span>Oracle</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>Keycloak</span><span>OAuth2</span><span>Microservices</span><span>Liquibase</span><span>AWS</span><span>Angular</span>
+      <span>Java 17</span><span>Spring Boot</span><span>Flowable</span><span>PostgreSQL</span><span>Oracle</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>Keycloak</span><span>OAuth2</span><span>Microservices</span><span>Liquibase</span><span>AWS</span><span>Angular</span>
+    </div>
+  </div>
+
+  <section id="about" class="section">
+    <h2 class="section-title reveal"><span class="mono">01</span> About</h2>
+    <div class="about-grid">
+      <p class="reveal about-text">Backend engineer with <strong>5+ years</strong> in Java, specialised in banking and financial systems. I design scalable, secure applications with Spring Boot and REST APIs, automate processes with Flowable, and lean on Domain-Driven Design, DevOps and Agile to ship high-impact solutions for international clients.</p>
+      <div class="stats">
+        <div class="stat reveal"><b data-count="5" data-suffix="+">0</b><span>years in Java</span></div>
+        <div class="stat reveal"><b data-count="10" data-suffix="+">0</b><span>bank clients served</span></div>
+        <div class="stat reveal"><b data-count="30" data-suffix="%">0</b><span>faster integration</span></div>
+        <div class="stat reveal"><b data-count="90" data-suffix="%">0</b><span>critical-module test coverage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2 class="section-title reveal"><span class="mono">02</span> Experience</h2>
+    <div class="role-head reveal">
+      <h3>Java Developer <em>@ Proxym-IT</em></h3>
+      <span class="mono">2021 — Present · Sousse, Tunisia</span>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="line"><div class="line-fill" id="lineFill"></div><div class="packet" id="packet"></div></div>
+
+      <article class="node reveal tilt">
+        <span class="dot"></span>
+        <h4>Comar — HAYETT Digital Platform</h4>
+        <p class="tag mono">insurance · collective contracts</p>
+        <ul>
+          <li>Analysed and scoped the <b>collective contracts</b> module for the HAYETT customer space: functional specification</li>
+          <li>Designed secure <b>subscriber / member</b> profiles with strict data isolation between the employer and its employees.</li>
+          <li>Back-office access management: generation of temporary credentials with expiry, delivered over SMS and e-mail, with a full audit trail.</li>
+          <li>Member self-service: savings balance and history, advances, performance and benefits tracking, plus on-the-fly PDF <b>employer certificate</b> generation.</li>
+        </ul>
+      </article>
+
+      <article class="node reveal tilt">
+        <span class="dot"></span>
+        <h4>Product Team</h4>
+        <p class="tag mono">core banking components</p>
+        <ul>
+          <li>Modular banking components (Java 11, Spring Boot) deployed for <b>10+ clients</b>, cutting integration time by <b>30%</b>.</li>
+          <li>Secure web MVC app (CSA, JSF) for banking agents' daily operations.</li>
+          <li>Domain-Driven Design for a robust, maintainable architecture.</li>
+          <li>Flowable workflow automation and Redis caching to slash API response times.</li>
+          <li>JUnit suites reaching <b>90% coverage</b> on critical modules.</li>
+        </ul>
+      </article>
+
+      <article class="node reveal tilt">
+        <span class="dot"></span>
+        <h4>Coris Bank International</h4>
+        <p class="tag mono">workflows &amp; migrations</p>
+        <ul>
+          <li>Front- and back-office features with Java 17 and Spring Boot.</li>
+          <li>Flowable approval workflows that reduced processing delays.</li>
+          <li>PostgreSQL → Oracle migration with Liquibase, <b>zero data loss</b>.</li>
+          <li>Reusable export/import component (PDF, CSV, XLS).</li>
+        </ul>
+      </article>
+
+      <article class="node reveal tilt">
+        <span class="dot"></span>
+        <h4>International Bank for Commerce and Industry</h4>
+        <p class="tag mono">integration &amp; automation</p>
+        <ul>
+          <li>Integrated DocuBase APIs for document management.</li>
+          <li>Cron scheduler for automated notifications to banking agents.</li>
+        </ul>
+      </article>
+
+      <article class="node reveal tilt">
+        <span class="dot"></span>
+        <h4>Central Bank of the Republic of Guinea</h4>
+        <p class="tag mono">security &amp; payments</p>
+        <ul>
+          <li>Secure authentication process.</li>
+          <li>"Forgot password" flow with OTP verification.</li>
+          <li>Module for local and international transfers.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 class="section-title reveal"><span class="mono">03</span> Stack</h2>
+    <div class="skills">
+      <div class="skill-group reveal"><h5 class="mono">languages</h5><div class="chips"><i>Java 11/17</i><i>JavaScript</i><i>SQL</i></div></div>
+      <div class="skill-group reveal"><h5 class="mono">frameworks</h5><div class="chips"><i>Spring Boot</i><i>Flowable</i><i>JSF</i><i>Node.js</i><i>Angular</i></div></div>
+      <div class="skill-group reveal"><h5 class="mono">databases</h5><div class="chips"><i>PostgreSQL</i><i>Oracle</i><i>MongoDB</i><i>Redis</i></div></div>
+      <div class="skill-group reveal"><h5 class="mono">devops &amp; tools</h5><div class="chips"><i>Docker</i><i>Kubernetes</i><i>Git</i><i>Keycloak</i><i>Liquibase</i><i>JUnit</i></div></div>
+      <div class="skill-group reveal"><h5 class="mono">cloud &amp; security</h5><div class="chips"><i>AWS EC2/S3</i><i>OAuth2</i><i>Microservices</i><i>REST APIs</i></div></div>
+      <div class="skill-group reveal"><h5 class="mono">ai &amp; automation</h5><div class="chips"><i>AI-assisted development</i><i>Claude Code</i><i>Prompt engineering</i><i>LLM API integration</i><i>Workflow automation (Flowable)</i></div></div>
+      <div class="skill-group reveal"><h5 class="mono">human</h5><div class="chips"><i>Problem solving</i><i>Teamwork</i><i>Agile</i><i>French (fluent)</i><i>English (professional)</i></div></div>
+    </div>
+
+    <h3 class="edu-title reveal">Education</h3>
+    <div class="edu reveal">
+      <div><b>Computer Engineering</b><span>EPI – École Polytechnique Internationale, Sousse</span></div>
+      <div><b>Bachelor's in Computer Science</b><span>Institut Supérieur d'Informatique, Mahdia</span></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2 class="section-title reveal"><span class="mono">04</span> Contact</h2>
+    <p class="big reveal">Have a system that needs to be <em>rock solid</em>? Let's talk.</p>
+    <div class="cta reveal">
+      <a class="btn primary magnetic" href="mailto:houssemgran1990@gmail.com">houssemgran1990@gmail.com</a>
+      <a class="btn magnetic" href="https://www.linkedin.com/in/houssem-gran/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="mono">© <span id="year"></span> Houssem Gran · built with HTML, CSS &amp; a little JS</footer>
+<script src="main.js"></script>
+</body>
+</html>
