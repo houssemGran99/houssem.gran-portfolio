@@ -17,7 +17,7 @@
   bootTick();
 
   /* ---------- typing roles ---------- */
-  const role = 'AI Orchestrator';
+  const role = 'AI Orchestrator | Full Stack Engineer';
   const typed = $('#typed');
   function startTyping() {
     if (reduce) { typed.textContent = role; return; }
@@ -66,6 +66,13 @@
   }
   updateTimeline();
 
+  /* ---------- touch: highlight whichever card is centred (replaces hover) ---------- */
+  if (matchMedia('(hover: none)').matches) {
+    const fio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('focus', e.isIntersecting)),
+      { rootMargin: '-40% 0px -40% 0px' });
+    $$('.node, .stat, .skill-group').forEach(el => fio.observe(el));
+  }
+
   /* ---------- 3D tilt cards ---------- */
   if (!reduce) $$('.tilt').forEach(card => {
     card.addEventListener('mousemove', e => {
@@ -93,6 +100,11 @@
   const cur = $('#cursor');
   const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
   addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  // touch: the glow and the network follow your finger
+  const touch = e => { const p = e.touches[0]; if (!p) return; mouse.x = p.clientX; mouse.y = p.clientY; cur.classList.add('on'); };
+  addEventListener('touchstart', touch, { passive: true });
+  addEventListener('touchmove', touch, { passive: true });
+  addEventListener('touchend', () => setTimeout(() => cur.classList.remove('on'), 600), { passive: true });
   (function glow() {
     cur.style.transform = `translate(${mouse.x}px,${mouse.y}px)`;
     requestAnimationFrame(glow);
@@ -112,7 +124,10 @@
       vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35
     }));
   };
-  addEventListener('resize', resize); resize();
+  // mobile browsers fire resize when the address bar hides on scroll: only rebuild if the width changed
+  let lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth !== lastW) { lastW = innerWidth; resize(); } });
+  resize();
   const LINK = 140;
   (function draw() {
     ctx.clearRect(0, 0, W, H);
