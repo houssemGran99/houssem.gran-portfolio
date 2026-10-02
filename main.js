@@ -73,7 +73,7 @@
   if (matchMedia('(hover: none)').matches) {
     const fio = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('focus', e.isIntersecting)),
       { rootMargin: '-40% 0px -40% 0px' });
-    $$('.node, .stat, .skill-group').forEach(el => fio.observe(el));
+    $$('.node, .stat, .skill-group, .cert').forEach(el => fio.observe(el));
   }
 
   /* ---------- 3D tilt cards ---------- */

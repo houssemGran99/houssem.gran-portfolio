@@ -113,6 +113,20 @@ h1{font-size:clamp(3rem,10vw,8rem);line-height:1;font-weight:700;letter-spacing:
 .edu div{border-left:2px solid var(--accent);padding-left:18px}
 .edu b{display:block}.edu span{color:var(--muted);font-size:.95rem}
 
+/* certificates */
+.certs{display:grid;gap:20px}
+.cert{display:flex;gap:28px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 30px;position:relative;overflow:hidden;transition:border-color .3s,box-shadow .3s,opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.cert:hover,.cert.focus{border-color:var(--accent);box-shadow:0 20px 60px -20px rgba(92,255,176,.25)}
+.cert::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(92,255,176,.10) 50%,transparent 60%);transform:translateX(-120%);animation:sweep 5s ease-in-out 1.5s infinite;pointer-events:none}
+@keyframes sweep{to{transform:translateX(120%)}}
+.cert-badge{flex:none;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;font-weight:600;letter-spacing:.06em;color:#04120b;background:conic-gradient(from 0deg,var(--accent),var(--accent2),var(--accent));animation:spin 12s linear infinite}
+.cert-badge{font-size:.8rem}
+@keyframes spin{to{filter:hue-rotate(40deg)}}
+.cert h4{font-size:1.35rem;margin-bottom:6px}
+.cert-meta{color:var(--muted);font-size:.95rem}
+.cert-id{color:var(--muted);font-size:.75rem;margin:6px 0 16px;word-break:break-all}
+.nav nav .short{display:none}
+
 /* contact */
 .contact{text-align:center}
 .contact .cta{justify-content:center}
@@ -126,9 +140,11 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.8rem;bo
   .timeline{padding-left:36px}.node{padding:22px 20px}.node .dot{left:-34px;top:28px}
   .hero{padding-top:100px}.scroll-hint{display:none}
   .btn{padding:13px 22px}.cta .btn{flex:1 1 auto;text-align:center}
-  .nav{padding:14px 20px}.nav nav{gap:14px}.nav nav a{font-size:.82rem}
+  .nav{padding:14px 20px;gap:14px}.nav nav{gap:12px}.nav nav a{font-size:.8rem}
   .stat b{font-size:2.2rem}.stat{padding:18px}
   .about-text{font-size:1.1rem}
+  .cert{flex-direction:column;align-items:flex-start;gap:18px;padding:22px 20px}.cert-badge{width:72px;height:72px;font-size:.7rem}
+  .nav nav .long{display:none}.nav nav .short{display:inline}
 }
 @media(hover:none){.cursor{width:220px;height:220px;margin:-110px 0 0 -110px;opacity:0;transition:opacity .4s}.cursor.on{opacity:1}}
 @media(prefers-reduced-motion:reduce){
