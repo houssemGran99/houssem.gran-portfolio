@@ -51,7 +51,7 @@
     if (!e.isIntersecting) return;
     e.target.classList.add('in');
     $$('[data-count]', e.target).forEach(countUp);
-    io.unobserve(e.target);
+    io.unobserve(e.target); 
   }), { threshold: 0.15 });
   $$('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 80 + 'ms'; io.observe(el); });
 
